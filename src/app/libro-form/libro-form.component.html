@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="title">Agregar Libro</h1>
+    <form (ngSubmit)="guardarLibro()">
+      <div class="field">
+        <label class="label">Título</label>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="libro.titulo" name="titulo" required />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Autor</label>
+        <div class="control">
+          <input class="input" type="text" [(ngModel)]="libro.autor" name="autor" required />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Páginas</label>
+        <div class="control">
+          <input class="input" type="number" [(ngModel)]="libro.paginas" name="paginas" required />
+        </div>
+      </div>
+  
+      <div class="field">
+        <label class="label">Precio</label>
+        <div class="control">
+          <input class="input" type="number" [(ngModel)]="libro.precio" name="precio" required />
+        </div>
+      </div>
+  
+      <button class="button is-primary" type="submit">Guardar</button>
+    </form>
+  </div>
+  
