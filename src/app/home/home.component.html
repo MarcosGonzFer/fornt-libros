@@ -22,7 +22,7 @@
                 <td>{{ libro.paginas }}</td>
                 <td>{{ libro.precio }}</td>
                 <td>
-                    <a [routerLink]="['/libro-form', libro.id]" class="button is-info is-small">Editar</a>
+                    <a [routerLink]="['/libro-form-editar', libro.id]" class="button is-info is-small">Editar</a>
                     <button (click)="eliminarLibro(libro.id)" class="button is-danger is-small">Eliminar</button>
                 </td>
             </tr>

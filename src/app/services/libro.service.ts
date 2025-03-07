@@ -23,9 +23,11 @@ export class LibroService {
     const { id, ...libroWithoutId } = libro;
     return this.http.post<Libro>(this.apiUrl, libroWithoutId);
   }
-   actualizarLibro(libro:Libro){
-    return this.http.put(this.apiUrl, libro);
-   }
+  actualizarLibro(libro: Libro): Observable<Libro> {
+    return this.http.put<Libro>(`${this.apiUrl}/${libro.id}`, libro, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
    eliminarLibro(id:number){
     return this.http.delete(`${this.apiUrl}/${id}`);
    }
