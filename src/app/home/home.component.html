@@ -1,33 +1,36 @@
 <div class="container">
-    <h1 class="title">Lista de Libros</h1>
+  <h1 class="title">Lista de Libros</h1>
 
-    <button><a routerLink="/libro-form" class="button is-primary mb-4">Agregar Libro</a></button>
+  <button><a routerLink="/libro-form" class="button is-primary mb-4">Agregar Libro</a></button>
+  <a [routerLink]="['/capitulos']" class="button is-warning is-small">Ver Capitulos</a>
 
-    <table class="table is-striped is-fullwidth">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Páginas</th>
-                <th>Precio</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let libro of libro">
-                <td>{{ libro.id }}</td>
-                <td>{{ libro.titulo }}</td>
-                <td>{{ libro.autor }}</td>
-                <td>{{ libro.paginas }}</td>
-                <td>{{ libro.precio }}</td>
-                <td>
-                    <a [routerLink]="['/libro-form-editar', libro.id]" class="button is-info is-small">Editar</a>
-                    <button (click)="eliminarLibro(libro.id)" class="button is-danger is-small">Eliminar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 
-    <a routerLink="/" class="button is-link">Volver</a>
+  <table class="table is-striped is-fullwidth">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Páginas</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let libro of libro">
+        <td>{{ libro.id }}</td>
+        <td>{{ libro.titulo }}</td>
+        <td>{{ libro.autor }}</td>
+        <td>{{ libro.paginas }}</td>
+        <td>{{ libro.precio }}</td>
+        <td>
+          <a [routerLink]="['/libro-form-editar', libro.id]" class="button is-info is-small">Editar</a>
+          <button (click)="eliminarLibro(libro.id)" class="button is-danger is-small">Eliminar</button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a routerLink="/" class="button is-link">Volver</a>
 </div>

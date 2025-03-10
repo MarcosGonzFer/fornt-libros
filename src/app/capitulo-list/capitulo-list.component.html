@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="title">Capítulos del Libro</h1>
+  
+    <button><a routerLink="/libros" class="button is-primary mb-4">Volver a la lista de libros</a></button>
+    <a [routerLink]="['/capitulo-form']" class="button is-info is-small">Agregar Capítulo</a>
+  
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Número</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let capitulo of capitulos">
+          <td>{{ capitulo.id }}</td>
+          <td>{{ capitulo.nombre }}</td>
+          <td>{{ capitulo.numero }}</td>
+          <td>
+            <button (click)="eliminarCapitulo(capitulo.id)" class="button is-danger is-small">Eliminar</button>
+            <a [routerLink]="['/capitulo-form-editar', capitulo.id]" class="button is-warning is-small">Editar</a>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

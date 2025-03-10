@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="title">Agregar Capítulo</h1>
+
+  <form (ngSubmit)="guardarCapitulo()">
+    <div class="field">
+      <label class="label" for="nombre">Nombre del Capítulo</label>
+      <div class="control">
+        <input
+          type="text"
+          class="input"
+          id="nombre"
+          [(ngModel)]="capitulo.nombre"
+          name="nombre"
+          required
+          placeholder="Nombre del capítulo"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="numero">Número del Capítulo</label>
+      <div class="control">
+        <input
+          type="number"
+          class="input"
+          id="numero"
+          [(ngModel)]="capitulo.numero"
+          name="numero"
+          required
+          min="1"
+          placeholder="Número del capítulo"
+        />
+      </div>
+    </div>
+
+    <button type="submit" class="button is-primary mt-4">Guardar Capítulo</button>
+  </form>
+
+  <a [routerLink]="['/capitulos']" class="button is-link mt-4">Volver a los Capítulos</a>
+</div>
